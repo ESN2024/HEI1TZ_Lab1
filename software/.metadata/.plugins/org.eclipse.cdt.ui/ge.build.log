@@ -1,0 +1,6 @@
+16:33:45 **** Clean-only build of configuration Nios II for project ge ****
+make clean 
+[ge clean complete]
+
+16:33:45 Build Finished (took 206ms)
+

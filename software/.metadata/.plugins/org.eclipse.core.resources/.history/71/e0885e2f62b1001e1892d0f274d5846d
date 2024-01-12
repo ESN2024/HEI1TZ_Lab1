@@ -1,0 +1,17 @@
+#include "system.h"
+#include "altera_avalon_pio_regs.h"
+#include <time.h>
+
+int main(void){
+
+
+
+		IOWR_ALTERA_AVALON_PIO_DATA(LED_OUT_BASE,0x01);
+		ALT_PRINTF(2);
+
+
+
+
+
+	return 0;
+};
