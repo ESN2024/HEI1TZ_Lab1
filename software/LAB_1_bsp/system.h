@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'Archi_lab_1'
  * SOPC Builder design path: ../../Archi_lab_1.sopcinfo
  *
- * Generated: Fri Jan 12 15:35:27 CET 2024
+ * Generated: Tue Jan 16 15:35:48 CET 2024
  */
 
 /*
@@ -54,6 +54,7 @@
 /* Include definitions from linker script generator */
 #include "linker.h"
 
+
 /*
  * CPU configuration
  *
@@ -91,6 +92,7 @@
 #define ALT_CPU_OCI_VERSION 1
 #define ALT_CPU_RESET_ADDR 0x00010000
 
+
 /*
  * CPU configuration (with legacy prefix - don't use these anymore)
  *
@@ -125,6 +127,7 @@
 #define NIOS2_OCI_VERSION 1
 #define NIOS2_RESET_ADDR 0x00010000
 
+
 /*
  * Define for each module class mastered by the CPU
  *
@@ -134,6 +137,7 @@
 #define __ALTERA_AVALON_ONCHIP_MEMORY2
 #define __ALTERA_AVALON_PIO
 #define __ALTERA_NIOS2_GEN2
+
 
 /*
  * Led_out configuration
@@ -161,6 +165,7 @@
 #define LED_OUT_SPAN 16
 #define LED_OUT_TYPE "altera_avalon_pio"
 
+
 /*
  * PushButton_trigger configuration
  *
@@ -170,22 +175,23 @@
 #define PUSHBUTTON_TRIGGER_BASE 0x21050
 #define PUSHBUTTON_TRIGGER_BIT_CLEARING_EDGE_REGISTER 0
 #define PUSHBUTTON_TRIGGER_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define PUSHBUTTON_TRIGGER_CAPTURE 0
+#define PUSHBUTTON_TRIGGER_CAPTURE 1
 #define PUSHBUTTON_TRIGGER_DATA_WIDTH 1
 #define PUSHBUTTON_TRIGGER_DO_TEST_BENCH_WIRING 0
 #define PUSHBUTTON_TRIGGER_DRIVEN_SIM_VALUE 0
-#define PUSHBUTTON_TRIGGER_EDGE_TYPE "NONE"
+#define PUSHBUTTON_TRIGGER_EDGE_TYPE "ANY"
 #define PUSHBUTTON_TRIGGER_FREQ 50000000
 #define PUSHBUTTON_TRIGGER_HAS_IN 1
 #define PUSHBUTTON_TRIGGER_HAS_OUT 0
 #define PUSHBUTTON_TRIGGER_HAS_TRI 0
-#define PUSHBUTTON_TRIGGER_IRQ -1
-#define PUSHBUTTON_TRIGGER_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define PUSHBUTTON_TRIGGER_IRQ_TYPE "NONE"
+#define PUSHBUTTON_TRIGGER_IRQ 1
+#define PUSHBUTTON_TRIGGER_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define PUSHBUTTON_TRIGGER_IRQ_TYPE "EDGE"
 #define PUSHBUTTON_TRIGGER_NAME "/dev/PushButton_trigger"
 #define PUSHBUTTON_TRIGGER_RESET_VALUE 0
 #define PUSHBUTTON_TRIGGER_SPAN 16
 #define PUSHBUTTON_TRIGGER_TYPE "altera_avalon_pio"
+
 
 /*
  * System configuration
@@ -222,6 +228,7 @@
 #define ALT_STDOUT_TYPE "altera_avalon_jtag_uart"
 #define ALT_SYSTEM_NAME "Archi_lab_1"
 
+
 /*
  * hal configuration
  *
@@ -231,6 +238,7 @@
 #define ALT_MAX_FD 32
 #define ALT_SYS_CLK none
 #define ALT_TIMESTAMP_CLK none
+
 
 /*
  * jtag_uart_0 configuration
@@ -248,6 +256,7 @@
 #define JTAG_UART_0_TYPE "altera_avalon_jtag_uart"
 #define JTAG_UART_0_WRITE_DEPTH 64
 #define JTAG_UART_0_WRITE_THRESHOLD 8
+
 
 /*
  * onchip_memory2_0 configuration
@@ -276,6 +285,7 @@
 #define ONCHIP_MEMORY2_0_SPAN 40000
 #define ONCHIP_MEMORY2_0_TYPE "altera_avalon_onchip_memory2"
 #define ONCHIP_MEMORY2_0_WRITABLE 1
+
 
 /*
  * pio_0 configuration

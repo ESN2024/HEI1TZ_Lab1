@@ -1,0 +1,18 @@
+
+#include "system.h"
+#include "altera_avalon_pio_regs.h"
+#include "sys/alt_stdio.h"
+#include "sys/unistd.h"
+#include "sys/time.h"
+
+
+
+int main(void) {
+
+
+	While((IORD_ALTERA_AVALON_PIO_DATA(PUSHBUTTON_TRIGGER_BASE)==0))if (IORD_ALTERA_AVALON_PIO_DATA(PIO_0_BASE)==0x1)alt_printf('h');
+
+
+
+    return 0;
+}

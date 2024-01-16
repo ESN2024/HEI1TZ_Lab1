@@ -1,0 +1,45 @@
+
+#include "system.h"
+#include "altera_avalon_pio_regs.h"
+#include "sys/alt_stdio.h"
+#include "sys/unistd.h"
+#include "sys/time.h"
+
+
+volatile int delay= 1000000; //init global à 1 sec
+volatile int speed=0;
+volatile alt_u16 cpt=0x0F;
+
+static void irqhandler (void * context, alt_u32 id)
+{
+	int Switch_button=IORD_ALTERA_AVALON_PIO_DATA(PIO_0_BASE);
+	alt_printf('h');
+	speed= delay/Switch_button;
+
+}
+
+int main(void) {
+
+
+
+	alt_irq_register( PUSHBUTTON_TRIGGER_BASE, NULL, (void*)irqhandler );
+	while(1)
+			{
+				for( int i=0; i<10;i++)
+				{
+
+					IOWR_ALTERA_AVALON_PIO_DATA(LED_OUT_BASE,cpt);
+					usleep(speed);
+					IOWR_ALTERA_AVALON_PIO_DATA(LED_OUT_BASE,0x00);
+					usleep(speed);
+					cpt=cpt<<1;
+				}
+				cpt=0x0F;
+			}
+
+
+
+
+
+    return 0;
+}

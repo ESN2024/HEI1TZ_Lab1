@@ -1,0 +1,27 @@
+
+#include "system.h"
+#include "altera_avalon_pio_regs.h"
+#include "sys/alt_stdio.h"
+#include "sys/unistd.h"
+#include <time.h>
+
+void my_delay(int i)    /*Pause l'application pour i seconds*/
+{
+    clock_t start,end;
+    start=clock();
+    while(((end=clock())-start)<=i*CLOCKS_PER_SEC);
+}
+
+int main(void) {
+    while(1) {
+        IOWR_ALTERA_AVALON_PIO_DATA(LED_OUT_BASE, 0x01);
+
+        IOWR_ALTERA_AVALON_PIO_DATA(LED_OUT_BASE, 0x02);
+        my_delay(1);
+        IOWR_ALTERA_AVALON_PIO_DATA(LED_OUT_BASE, 0x200);
+        my_delay(1);
+
+    }
+
+    return 0;
+}
