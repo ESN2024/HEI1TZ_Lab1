@@ -1,22 +1,9 @@
-15:48:48 **** Incremental Build of configuration Nios II for project LAB_1 ****
+15:40:41 **** Incremental Build of configuration Nios II for project LAB_1 ****
 make all 
 Info: Building ../LAB_1_bsp/
-C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../LAB_1_bsp/
+D:/programme/QUARTUS/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../LAB_1_bsp/
 [BSP build complete]
-Info: Compiling main.c to obj/default/main.o
-nios2-elf-gcc -xc -MP -MMD -c -I../LAB_1_bsp//HAL/inc -I../LAB_1_bsp/ -I../LAB_1_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
-main.c: In function 'main':
-main.c:32:2: warning: implicit declaration of function 'alt_irq_register' [-Wimplicit-function-declaration]
-  alt_irq_register( PUSHBUTTON_TRIGGER_IRQ, NULL, (void*)irqhandler );
-  ^
-Info: Linking LAB_1.elf
-nios2-elf-g++  -T'../LAB_1_bsp//linker.x' -msys-crt0='../LAB_1_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../LAB_1_bsp/   -Wl,-Map=LAB_1.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o LAB_1.elf obj/default/main.o -lm -msys-lib=m
-nios2-elf-insert LAB_1.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Archi_lab_1 --quartus_project_dir "c:/Users/kiheitz.UCA/Desktop/Lab_1_HEITZ" --jdi ../..//output_files/LAB_1.jdi --sopcinfo c:/Users/kiheitz.UCA/Desktop/Lab_1_HEITZ/software/LAB_1_bsp/../../Archi_lab_1.sopcinfo
-Info: (LAB_1.elf) 27 KBytes program size (code + initialized data).
-Info:             4752 Bytes free for stack + heap.
-Info: Creating LAB_1.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source LAB_1.elf >LAB_1.objdump
 [LAB_1 build complete]
 
-15:49:02 Build Finished (took 14s.501ms)
+15:40:42 Build Finished (took 953ms)
 
