@@ -27,6 +27,6 @@ Vous pouvez retrouver une vidéo démontrant mon système :
 
 https://github.com/ESN2024/HEI1TZ_Lab1/assets/114926533/4c08c795-841a-4ec4-84d7-8214376d4a80
 
-Vous trouverez le fichier .sof ici : https://github.com/ESN2024/HEI1TZ_Lab1/tree/main/output_files 
+Vous trouverez le fichier .sof ici : https://github.com/ESN2024/HEI1TZ_Lab1/blob/main/output_files/LAB_1.sof
 
 
