@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="Archi_lab_1" kind="system" version="18.1" fabric="QSYS">
- <!-- Format version 18.1 646 (Future versions may contain additional information.) -->
- <!-- 2024.01.16.15:32:13 -->
+ <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
+ <!-- 2024.01.24.12:18:56 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1705415512</value>
+  <value>1706095116</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -6120,7 +6120,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.INIT_MEM_CONTENT</name>
-   <value>0</value>
+   <value>1</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.INSTANCE_ID</name>
@@ -6128,7 +6128,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.NON_DEFAULT_INIT_FILE_ENABLED</name>
-   <value>0</value>
+   <value>1</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.RAM_BLOCK_TYPE</name>
@@ -6248,7 +6248,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="initMemContent">
    <type>boolean</type>
-   <value>false</value>
+   <value>true</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -6256,9 +6256,9 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="initializationFileName">
    <type>java.lang.String</type>
-   <value>onchip_mem.hex</value>
+   <value>D:/UCA/m2/conception_conjointe/HEI1TZ_Lab1/software/LAB_1/mem_init/Archi_lab_1_onchip_memory2_0.hex</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -6266,7 +6266,7 @@ the requested settings for a module instance. -->
    <type>boolean</type>
    <value>false</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -6344,9 +6344,9 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="useNonDefaultInitFile">
    <type>boolean</type>
-   <value>false</value>
+   <value>true</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -6354,7 +6354,7 @@ the requested settings for a module instance. -->
    <type>boolean</type>
    <value>false</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
@@ -6467,7 +6467,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_init_file_name">
    <type>java.lang.String</type>
-   <value>Archi_lab_1_onchip_memory2_0.hex</value>
+   <value>D:/UCA/m2/conception_conjointe/HEI1TZ_Lab1/software/LAB_1/mem_init/Archi_lab_1_onchip_memory2_0.hex</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -12942,6 +12942,6 @@ parameters are a RESULT of the module parameters. -->
   <displayName>Reset Connection</displayName>
   <version>18.1</version>
  </plugin>
- <reportVersion>18.1 646</reportVersion>
- <uniqueIdentifier>0A00270000070000018D12AF997B</uniqueIdentifier>
+ <reportVersion>18.1 625</reportVersion>
+ <uniqueIdentifier>4ED577CBCD350000018D3B318D0A</uniqueIdentifier>
 </EnsembleReport>

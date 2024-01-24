@@ -1,4 +1,4 @@
-15:33:25 **** Incremental Build of configuration Nios II for project LAB_1 ****
+12:21:10 **** Incremental Build of configuration Nios II for project LAB_1 ****
 make all 
 Info: Building ../LAB_1_bsp/
 D:/programme/QUARTUS/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../LAB_1_bsp/
@@ -16,34 +16,4 @@ Info: (LAB_1.elf) 27 KBytes program size (code + initialized data).
 Info:             4752 Bytes free for stack + heap.
 Info: Creating LAB_1.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source LAB_1.elf >LAB_1.objdump
-[LAB_1 build complete]
-15:33:32 **** Incremental Build of configuration Nios II for project LAB_1 ****
-make all 
-Info: Building ../LAB_1_bsp/
-D:/programme/QUARTUS/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../LAB_1_bsp/
-[BSP build complete]
-[LAB_1 build complete]
-15:33:35 **** Incremental Build of configuration Nios II for project LAB_1 ****
-make all 
-Info: Building ../LAB_1_bsp/
-D:/programme/QUARTUS/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../LAB_1_bsp/
-[BSP build complete]
-[LAB_1 build complete]
-15:34:00 **** Incremental Build of configuration Nios II for project LAB_1 ****
-make all 
-Info: Building ../LAB_1_bsp/
-D:/programme/QUARTUS/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../LAB_1_bsp/
-[BSP build complete]
-[LAB_1 build complete]
-15:39:47 **** Incremental Build of configuration Nios II for project LAB_1 ****
-make all 
-Info: Building ../LAB_1_bsp/
-D:/programme/QUARTUS/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../LAB_1_bsp/
-[BSP build complete]
-[LAB_1 build complete]
-15:40:41 **** Incremental Build of configuration Nios II for project LAB_1 ****
-make all 
-Info: Building ../LAB_1_bsp/
-D:/programme/QUARTUS/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../LAB_1_bsp/
-[BSP build complete]
 [LAB_1 build complete]

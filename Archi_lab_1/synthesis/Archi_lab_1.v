@@ -45,8 +45,11 @@ module Archi_lab_1 (
 	wire         mm_interconnect_0_onchip_memory2_0_s1_write;                 // mm_interconnect_0:onchip_memory2_0_s1_write -> onchip_memory2_0:write
 	wire  [31:0] mm_interconnect_0_onchip_memory2_0_s1_writedata;             // mm_interconnect_0:onchip_memory2_0_s1_writedata -> onchip_memory2_0:writedata
 	wire         mm_interconnect_0_onchip_memory2_0_s1_clken;                 // mm_interconnect_0:onchip_memory2_0_s1_clken -> onchip_memory2_0:clken
+	wire         mm_interconnect_0_pushbutton_trigger_s1_chipselect;          // mm_interconnect_0:PushButton_trigger_s1_chipselect -> PushButton_trigger:chipselect
 	wire  [31:0] mm_interconnect_0_pushbutton_trigger_s1_readdata;            // PushButton_trigger:readdata -> mm_interconnect_0:PushButton_trigger_s1_readdata
 	wire   [1:0] mm_interconnect_0_pushbutton_trigger_s1_address;             // mm_interconnect_0:PushButton_trigger_s1_address -> PushButton_trigger:address
+	wire         mm_interconnect_0_pushbutton_trigger_s1_write;               // mm_interconnect_0:PushButton_trigger_s1_write -> PushButton_trigger:write_n
+	wire  [31:0] mm_interconnect_0_pushbutton_trigger_s1_writedata;           // mm_interconnect_0:PushButton_trigger_s1_writedata -> PushButton_trigger:writedata
 	wire         mm_interconnect_0_led_out_s1_chipselect;                     // mm_interconnect_0:Led_out_s1_chipselect -> Led_out:chipselect
 	wire  [31:0] mm_interconnect_0_led_out_s1_readdata;                       // Led_out:readdata -> mm_interconnect_0:Led_out_s1_readdata
 	wire   [1:0] mm_interconnect_0_led_out_s1_address;                        // mm_interconnect_0:Led_out_s1_address -> Led_out:address
@@ -55,6 +58,7 @@ module Archi_lab_1 (
 	wire  [31:0] mm_interconnect_0_pio_0_s1_readdata;                         // pio_0:readdata -> mm_interconnect_0:pio_0_s1_readdata
 	wire   [1:0] mm_interconnect_0_pio_0_s1_address;                          // mm_interconnect_0:pio_0_s1_address -> pio_0:address
 	wire         irq_mapper_receiver0_irq;                                    // jtag_uart_0:av_irq -> irq_mapper:receiver0_irq
+	wire         irq_mapper_receiver1_irq;                                    // PushButton_trigger:irq -> irq_mapper:receiver1_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                        // irq_mapper:sender_irq -> nios2_gen2_0:irq
 	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [Led_out:reset_n, PushButton_trigger:reset_n, irq_mapper:reset, jtag_uart_0:rst_n, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, onchip_memory2_0:reset, pio_0:reset_n, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                          // rst_controller:reset_req -> [nios2_gen2_0:reset_req, onchip_memory2_0:reset_req, rst_translator:reset_req_in]
@@ -71,11 +75,15 @@ module Archi_lab_1 (
 	);
 
 	Archi_lab_1_PushButton_trigger pushbutton_trigger (
-		.clk      (clk_clk),                                          //                 clk.clk
-		.reset_n  (~rst_controller_reset_out_reset),                  //               reset.reset_n
-		.address  (mm_interconnect_0_pushbutton_trigger_s1_address),  //                  s1.address
-		.readdata (mm_interconnect_0_pushbutton_trigger_s1_readdata), //                    .readdata
-		.in_port  (pushbutton_trigger_external_connection_export)     // external_connection.export
+		.clk        (clk_clk),                                            //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                    //               reset.reset_n
+		.address    (mm_interconnect_0_pushbutton_trigger_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_pushbutton_trigger_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_pushbutton_trigger_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_pushbutton_trigger_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_pushbutton_trigger_s1_readdata),   //                    .readdata
+		.in_port    (pushbutton_trigger_external_connection_export),      // external_connection.export
+		.irq        (irq_mapper_receiver1_irq)                            //                 irq.irq
 	);
 
 	Archi_lab_1_jtag_uart_0 jtag_uart_0 (
@@ -187,13 +195,17 @@ module Archi_lab_1 (
 		.pio_0_s1_address                               (mm_interconnect_0_pio_0_s1_address),                          //                                 pio_0_s1.address
 		.pio_0_s1_readdata                              (mm_interconnect_0_pio_0_s1_readdata),                         //                                         .readdata
 		.PushButton_trigger_s1_address                  (mm_interconnect_0_pushbutton_trigger_s1_address),             //                    PushButton_trigger_s1.address
-		.PushButton_trigger_s1_readdata                 (mm_interconnect_0_pushbutton_trigger_s1_readdata)             //                                         .readdata
+		.PushButton_trigger_s1_write                    (mm_interconnect_0_pushbutton_trigger_s1_write),               //                                         .write
+		.PushButton_trigger_s1_readdata                 (mm_interconnect_0_pushbutton_trigger_s1_readdata),            //                                         .readdata
+		.PushButton_trigger_s1_writedata                (mm_interconnect_0_pushbutton_trigger_s1_writedata),           //                                         .writedata
+		.PushButton_trigger_s1_chipselect               (mm_interconnect_0_pushbutton_trigger_s1_chipselect)           //                                         .chipselect
 	);
 
 	Archi_lab_1_irq_mapper irq_mapper (
 		.clk           (clk_clk),                        //       clk.clk
 		.reset         (rst_controller_reset_out_reset), // clk_reset.reset
 		.receiver0_irq (irq_mapper_receiver0_irq),       // receiver0.irq
+		.receiver1_irq (irq_mapper_receiver1_irq),       // receiver1.irq
 		.sender_irq    (nios2_gen2_0_irq_irq)            //    sender.irq
 	);
 
